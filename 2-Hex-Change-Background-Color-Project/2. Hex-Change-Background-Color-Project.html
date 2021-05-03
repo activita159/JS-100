@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="bacc-word">
+                <h1>HEX COLOR:</h1>
+            </div>
+            <button class="btn">Click me!</button>
+        </div>
+    </div>
+
+    <script>
+
+
+
+
+        var con = document.querySelector('.container');
+        var bw = document.querySelector('.bacc-word');
+        var btn = document.querySelector('.btn');
+        // var arr = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+        btn.addEventListener('click',function () {
+            var colorS ='#';
+            for(var i = 0 ;i < 6 ; i++){
+                // var r = Math.floor(Math.random()*arr.length);
+                // var r = Math.floor(Math.random()*16);
+                // var str = lol(r);
+
+                colorS += lol(Math.floor(Math.random()*16));
+            }
+            con.style.backgroundColor = colorS;  
+            bw.innerHTML = `<h1>HEX COLOR:${colorS}</h1>`;
+        })
+
+
+
+        function lol(numberr) {
+            return numberr.toString(16);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css.css">
+
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <button class="btn">Click me!</button>
+        </div>
+
+
+
+        <script>
+            var btn = document.querySelector('.btn');
+            var con = document.querySelector('.container');
+            btn.addEventListener('click',function () {
+                var r = Math.floor(Math.random()*256)+1;
+                var g = Math.floor(Math.random()*256)+1;
+                var b = Math.floor(Math.random()*256)+1;
+                con.style.backgroundColor = `rgb(${r},${g},${b})`;
+            })
+        </script>
+    </body>
+    </html>
+</body>
+</html>
