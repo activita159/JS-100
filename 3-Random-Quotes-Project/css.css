@@ -12,12 +12,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: #B09E99;
 }
 .box{
     max-width: 50%;
     padding: 30px;
-    background-color: burlywood;
+    background-color: #D8CFCC;
     display: flex;
     flex-wrap: wrap;
 }
