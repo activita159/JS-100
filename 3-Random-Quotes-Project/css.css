@@ -28,7 +28,13 @@ h3{
     font-size: 1.75rem;
     color: rgb(58, 58, 58);
 }
-.text-right{
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content .text-right{
     margin-left: auto;
     font-size: 1.25rem;
     color: rgb(0, 168, 168);

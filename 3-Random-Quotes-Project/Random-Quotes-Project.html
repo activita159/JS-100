@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,72 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css.css">
 </head>
+
 <body>
     <div class="container">
         <div class="box">
             <button>Generate Quote</button>
-            <h3>
-                <span class="icon"></span>
-                <span class="quoto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nostrum perferendis sequi ratione! Numquam, quia minus sunt vero ipsa dolores quibusdam esse eum omnis architecto, ducimus a voluptas beatae vitae?</span>
-            </h3>
-            <h5 class="text-right">
-                Charles Lindbergh
-            </h5>
+            <div class="content">
+                <h3>
+                    <svg class="svg-inline--fa fa-quote-left fa-w-16 fa-3x" style="width: 80px;" aria-hidden="true"
+                        data-prefix="fas" data-icon="quote-left" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z">
+                        </path>
+                    </svg>
+                    <span class="quoto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nostrum
+                        perferendis sequi ratione! Numquam, quia minus sunt vero ipsa dolores quibusdam esse eum omnis
+                        architecto, ducimus a voluptas beatae vitae?</span>
+                </h3>
+                <h5 class="text-right">
+                    Charles Lindbergh
+                </h5>
+
+            </div>
         </div>
     </div>
+
+
+    <script>
+        var arr = [{
+                'author': 'Tyne Daly',
+                'quote': 'A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.'
+            },
+            {
+                'author': 'Claude Louis Hector De Villars',
+                'quote': 'God save me from my friends. I can protect myself from my enemies.'
+            },
+            {
+                'author': 'David Thoreau',
+                'quote': 'The price of anything is the amount of life you exchange for it.'
+            },
+            {
+                'author': 'John Kenneth Galbraith',
+                'quote': 'Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all'
+            }
+        ];
+        
+        var btn = document.querySelector('button');
+        var content = document.querySelector('.content');
+        btn.addEventListener('click', function () {
+            var randomContent = Math.floor(Math.random()*4);
+            content.innerHTML = `
+                <h3>
+                    <svg class="svg-inline--fa fa-quote-left fa-w-16 fa-3x" style="width: 80px;" aria-hidden="true"
+                        data-prefix="fas" data-icon="quote-left" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z">
+                        </path>
+                    </svg>
+                    <span class="quoto">${arr[randomContent].quote}</span>
+                </h3>
+                <h5 class="text-right">
+                    ${arr[randomContent].author}
+                </h5>`
+        })
+    </script>
 </body>
+
 </html>
