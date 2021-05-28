@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,50 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css.css">
 </head>
+
 <body>
     <div class="content">
         <h3 class="text">A Messge You Would Like To Pass</h3>
-        <form class="form" action="">
-            <input type="text">
-            <button>submit</button>
-        </form>
-        <p class="lastMes">Last Message Delivered</p>
+        <div class="form" action="">
+            <input type="text" class="message" value="">
+            <button class="submitBtn">submit</button>
+        </div>
+        <div class="warning-box none">
+            <h3 class="text warning">Please Enter A Value To Pass</h3>
+        </div>
+        <h3 class="text">Last Message Delivered</h3>
+        <p class="showWord">HELLO WORLD</p>
     </div>
+
+
+    <script>
+        var showWord = document.querySelector('.showWord');
+        var submitBtn = document.querySelector('.submitBtn');
+        var messageText = document.querySelector('.message');
+        var warningBox = document.querySelector('.warning-box');
+
+        submitBtn.addEventListener('click', function () {
+
+            if (messageText.value == "") {
+                warningBox.classList.remove('none');
+                window.setTimeout(Timefunction, 2000)
+
+                function Timefunction() {
+                    warningBox.classList.add('none');
+                }
+            } else {
+                showWord.textContent = messageText.value;
+
+                window.setTimeout(Timefunction, 500)
+
+                function Timefunction() {
+                    
+                    messageText.value = ''
+                }
+
+            }
+        })
+    </script>
 </body>
+
 </html>

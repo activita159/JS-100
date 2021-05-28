@@ -10,12 +10,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(119, 201, 255);
+    background-color: rgb(101, 143, 170);
 }
 .content{
     width: 60%;
-    height: 50vh;
+    
     background-color: rgb(255, 234, 206);   
+}
+.content p{
+    text-align: center;
 }
 
 .text{
@@ -35,8 +38,9 @@ body{
     width: 100%;
     height: 40px;
     font-size: 20px;
+    border-radius: 5px;
 }
-.form button{
+.form .submitBtn{
     margin-top: 10px;
     width: 70px;
     height: 40px;
@@ -44,4 +48,25 @@ body{
     color: white;
     border-radius: 5px;
     font-size: 18px;
+    cursor: pointer;
+}
+.form .submitBtn:hover{
+    box-shadow:1px 1px 1.5px 1.5px rgb(78, 78, 78);
+    color: black;
+}
+.none{
+    display: none;
+}
+.warning-box{
+    width: 90%;
+    height: 30px;
+    background-color: rgb(255, 168, 190);
+    border-radius: 5px;
+    margin: 0 auto;
+    color: rgb(255, 0, 51);
+}
+.showWord{
+    color: rgb(139, 182, 211);
+    font-size: 25px;
+    font-weight: bold;
 }

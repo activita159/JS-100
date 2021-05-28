@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(255, 214, 214);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 70%;
+            height: 70%;
+            border: 7px solid rgb(110, 110, 255);
+            position: relative;
+        }
+        .Lbt{
+            position: absolute;
+            right:98%;
+            top:50%;
+            transform: translateY(-50%);
+            background-color: rgb(110, 110, 255);
+            padding: 20px 15px;
+            cursor: pointer;          
+        }
+        .Rbt{
+            position: absolute;
+            left:98%;
+            top:50%;
+            transform: translateY(-50%);
+            background-color: rgb(110, 110, 255);
+            padding: 20px 15px; 
+            cursor: pointer;     
+        }
+        .slider{
+            width: 100%;
+            height: 100%;
+        }
+        .slide{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .slide1{
+            background-image: url(./6-img/contBcg-0.jpg);            
+        }
+        .slide2{
+            background-image: url(./6-img/contBcg-1.jpg);
+        }
+        .slide3{
+            background-image: url(./6-img/contBcg-2.jpg);
+        }
+        .slide4{           
+            background-image: url(./6-img/contBcg-3.jpg);
+        }
+        .slide5{          
+            background-image: url(./6-img/contBcg-4.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Lbt">◁</div>
+        <div class="Rbt">▷</div>
+        <div class="slider">
+            <div class="slide slide1"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+            <div class="slide slide4"></div>
+            <div class="slide slide5"></div>
+        </div>
+    </div>
+
+
+    <script>
+        var imges = document.querySelectorAll('.slide');
+        var Lbt = document.querySelector('.Lbt');
+        var Rbt = document.querySelector('.Rbt');
+        var current = 0;
+
+
+        function set() {
+            for(var i = 0 ; i < imges.length ; i++){
+                imges[i].style.display = 'none';
+            };
+        };
+
+        function defaultImage() {
+            set();
+            imges[0].style.display='block';
+        };
+
+        Lbt.addEventListener('click',function () {
+            if(current == 0){
+                current = imges.length;
+            }
+            set();
+            imges[current-1].style.display="block";
+            current--;
+        })
+
+        Rbt.addEventListener('click',function () {
+            if(current == imges.length -1 ){
+                current = -1;
+            }
+            set();
+            imges[current +1].style.display='block';
+            current++;
+
+        })
+        
+        defaultImage();
+    </script>
+</body>
+</html>
